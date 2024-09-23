@@ -18,7 +18,6 @@ def highest_order_product(df):
 
 def monthly_sales_trend(data):
     monthly_order = data.resample(rule='M', on='order_purchase_timestamp').agg({
-    'order_id': 'nunique',
     "payment_value": 'sum'
     })
     monthly_order.index = monthly_order.index.strftime('%B')
